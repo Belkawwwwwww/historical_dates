@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.tsx", //точка входа
+  entry: "./src/app/index.tsx", //точка входа
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
     }),
   ],
   devtool: "source-map",

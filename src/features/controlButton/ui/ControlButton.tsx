@@ -1,51 +1,12 @@
 import React from "react";
-import styled from "styled-components";
 import { gsap } from "gsap";
-
-type Props = {
-  activePeriod: number;
-  totalPeriod: number;
-  handleNext: () => void;
-  handlePrevious: () => void;
-};
-const ControlContainer = styled.div`
-  margin-top: 172px;
-  margin-left: 404px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-`;
-const SelectedPeriod = styled.div`
-  color: #42567a;
-  font-weight: 400;
-  font-size: 14px;
-  font-family: "PT Sans";
-  line-height: 18.12px;
-  margin-bottom: 20px;
-`;
-const ContainerButton = styled.div`
-  display: flex;
-`;
-const Button = styled.button<{ $isActive: boolean }>`
-  border: 1px solid rgba(66, 86, 122, 0.5);
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  border-radius: 50%;
-  background: transparent;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  &:last-child {
-    margin-left: 20px;
-  }
-  ${({ $isActive }) =>
-    $isActive
-      ? `
-    opacity: 50%
-  `
-      : ""}
-`;
+import { Props } from "../type";
+import {
+  Button,
+  ContainerButton,
+  ControlContainer,
+  SelectedPeriod,
+} from "../style";
 
 export const ControlButton: React.FC<Props> = ({
   activePeriod,

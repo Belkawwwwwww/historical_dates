@@ -1,6 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-const VectorTitle = styled.div`
+
+export const VectorTitle = styled.div`
   position: absolute;
   width: 5px;
   height: 120px;
@@ -8,7 +8,7 @@ const VectorTitle = styled.div`
   left: 322px;
   background: linear-gradient(to bottom, #3877ee, #ef5da8);
 `;
-const Title = styled.div`
+export const Title = styled.div`
   position: absolute;
   left: 400px;
   top: 170px;
@@ -19,13 +19,3 @@ const Title = styled.div`
   font-family: "PT Sans";
   line-height: 67.2px;
 `;
-export const MainTitle: React.FC = () => {
-  return (
-    <>
-      <>
-        <VectorTitle />
-        <Title>Исторические даты</Title>
-      </>
-    </>
-  );
-};

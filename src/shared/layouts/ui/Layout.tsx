@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   overflow: hidden;
-  /* height: 100vh; */
+  height: 100vh;
   box-sizing: border-box;
 `;
 const VerticalVector = styled.div<{ $left?: number; $right?: number }>`

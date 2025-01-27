@@ -1,4 +1,4 @@
-declare module "gsap" {
-  const g: any;
-  export default g;
+declare module "*.svg" {
+  const content: any;
+  export default content;
 }

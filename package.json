@@ -19,6 +19,7 @@
     "swiper": "^11.2.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/gsap": "^3.0.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",

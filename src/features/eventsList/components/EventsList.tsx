@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Swiper as SwiperClass } from "swiper";
 import { Props } from "../type";
+import { FreeMode, Pagination, Navigation } from "swiper/modules";
+
 import {
   Container,
   Description,
@@ -16,6 +17,7 @@ import {
 export const EventsList: React.FC<Props> = ({ events }) => {
   const swiperRef = useRef<SwiperClass | null>(null); // Создаем реф для Swiper
   const [currentIndex, setCurrentIndex] = useState(0); // Состояние для индекса текущего слайда
+
   useEffect(() => {
     setCurrentIndex(0); // Сброс текущего индекса на 0
     swiperRef.current?.slideTo(0); // Перемещение слайдера к первому элементу
@@ -52,20 +54,30 @@ export const EventsList: React.FC<Props> = ({ events }) => {
       <path d="M1 1L6 6L1 11" stroke="#3877EE" strokeWidth="2" />
     </svg>
   );
-
   return (
     <Container>
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper; // Сохраняем ссылку на Swiper
-          setCurrentIndex(swiper.activeIndex); // Устанавливаем начальный индекс
+          setCurrentIndex(swiper.activeIndex);
         }}
-        onSlideChange={handleSlideChange} // Обработчик для изменения слайда
-        spaceBetween={120}
-        slidesPerView={3.5}
-        grabCursor={true}
-        touchRatio={1}
-        threshold={20}
+        onSlideChange={handleSlideChange}
+        slidesPerView={3}
+        spaceBetween={80}
+        freeMode={true}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        modules={[
+          FreeMode,
+          // Navigation,
+          // Pagination
+        ]}
+        className="mySwiper"
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
       >
         {events.map((event, index) => (
           <SwiperSlide key={index}>

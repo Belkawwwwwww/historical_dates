@@ -1,6 +1,6 @@
 export const timePeriodsData = [
   {
-    title: "1",
+    title: "Технологии",
     events: [
       {
         year: 1980,
@@ -29,7 +29,7 @@ export const timePeriodsData = [
     dates: "1980 1986",
   },
   {
-    title: "2",
+    title: "Кино",
     events: [
       {
         year: 1987,
@@ -58,7 +58,7 @@ export const timePeriodsData = [
     dates: "1987 1991",
   },
   {
-    title: "3",
+    title: "Литература",
     events: [
       {
         year: 1992,
@@ -82,7 +82,7 @@ export const timePeriodsData = [
     dates: "1992 1997",
   },
   {
-    title: "4",
+    title: "Новости",
     events: [
       {
         year: 1999,
@@ -112,7 +112,7 @@ export const timePeriodsData = [
     dates: "1999 2004",
   },
   {
-    title: "5",
+    title: "Спорт",
     events: [
       {
         year: 2006,
@@ -140,7 +140,7 @@ export const timePeriodsData = [
     dates: "2006 2014",
   },
   {
-    title: "6",
+    title: "Наука",
     events: [
       {
         year: 2015,
@@ -150,7 +150,7 @@ export const timePeriodsData = [
       {
         year: 2016,
         description:
-          "телескоп «Хаббл» обнаружил самую удаленную из всех обнуруженных галактик, получившую обозначение GN-z11",
+          "Телескоп «Хаббл» обнаружил самую удаленную из всех обнуруженных галактик, получившую обозначение GN-z11",
       },
       {
         year: 2017,

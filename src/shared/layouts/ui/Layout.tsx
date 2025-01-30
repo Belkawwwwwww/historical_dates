@@ -2,39 +2,51 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  position: relative;
-  overflow: hidden;
+  display: flex;
   height: 100vh;
-  box-sizing: border-box;
-`;
-const VerticalVector = styled.div<{ $left?: number; $right?: number }>`
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 1px;
-  background-color: rgba(66, 86, 122, 0.1);
-  left: ${(props) => props.$left}px;
-  right: ${(props) => props.$right}px;
-`;
-const HorizontalVector = styled.div`
-  position: absolute;
-  top: 480px;
-  left: 320px;
-  height: 1px;
-  width: 1440px;
-  background-color: rgba(66, 86, 122, 0.1);
+  margin-left: 320px;
+  margin-right: 160px;
+  border-left: 1px solid rgba(66, 86, 122, 0.1);
+  border-right: 1px solid rgba(66, 86, 122, 0.1);
+  position: relative;
+  flex-direction: column;
+  &::before {
+    content: "";
+    height: 100%;
+    width: 1px;
+    background-color: rgba(66, 86, 122, 0.1);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    max-width: 1440px;
+    background-color: rgba(66, 86, 122, 0.1);
+    position: absolute;
+    top: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @media (max-width: 320px) {
+    margin: 0;
+    border-right: none;
+    border-left: none;
+    &::before {
+      display: none;
+    }
+    &::after {
+      height: 1px;
+      width: 280px;
+      top: 50%;
+    }
+  }
 `;
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  return (
-    <Container>
-      <VerticalVector $left={320} />
-      <VerticalVector $left={1040} />
-      <VerticalVector $right={160} />
-      <HorizontalVector />
-      {children}
-    </Container>
-  );
+  return <Container>{children}</Container>;
 };

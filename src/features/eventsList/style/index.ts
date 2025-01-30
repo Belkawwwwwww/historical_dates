@@ -3,17 +3,31 @@ import styled from "styled-components";
 export const EventsListWrapper = styled.div`
   opacity: 0;
   transform: translateY(20px);
+  @media (max-width: 320px) {
+    transform: none;
+    margin-top: 313px;
+    margin-left: 20px;
+  }
 `;
 export const Container = styled.div`
-  margin-left: 404px;
-  margin-top: 56px;
-  width: 1200px;
+  margin-left: 80px;
+  margin-top: 42px;
+  width: 1270px;
   position: relative;
+  @media (max-width: 320px) {
+    margin: 0;
+    width: 732px;
+  }
 `;
 
 export const EventItem = styled.div`
   height: 135px;
-  width: 320px;
+
+  @media (max-width: 320px) {
+    height: auto;
+    width: 166px;
+    margin-left: 0;
+  }
 `;
 
 export const Year = styled.div`
@@ -23,6 +37,9 @@ export const Year = styled.div`
   line-height: 30px;
   font-family: "Bebas Neue";
   margin-bottom: 15px;
+  @media (max-width: 320px) {
+    font-size: 16px;
+  }
 `;
 
 export const Description = styled.div`
@@ -31,6 +48,10 @@ export const Description = styled.div`
   font-size: 20px;
   line-height: 30px;
   color: rgba(66, 86, 122, 1);
+  @media (max-width: 320px) {
+    font-size: 16px;
+    line-height: 20.3px;
+  }
 `;
 
 export const Button = styled.button`
@@ -47,10 +68,13 @@ export const Button = styled.button`
   border: none;
   box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
   cursor: pointer;
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 
 export const NextButton = styled(Button)`
-  right: -80px;
+  right: -44px;
 `;
 
 export const PrevButton = styled(Button)`

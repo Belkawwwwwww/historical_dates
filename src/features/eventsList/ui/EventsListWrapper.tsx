@@ -15,13 +15,13 @@ export const EventsListContainer: React.FC<Props> = ({
       if (showEvents) {
         gsap.to(ref.current, {
           opacity: 1,
-          duration: 0.5,
+          duration: 0.1,
           ease: "power2.out",
         });
       } else {
         gsap.to(ref.current, {
           opacity: 0,
-          duration: 0.5,
+          duration: 0.1,
           ease: "power2.in",
         });
       }

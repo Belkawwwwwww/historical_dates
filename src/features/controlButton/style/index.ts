@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const ControlContainer = styled.div`
-  margin-top: 172px;
-  margin-left: 404px;
-  position: relative;
+  margin-top: 393px;
+  margin-left: 80px;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
+  @media (max-width: 320px) {
+    margin-left: 20px;
+    margin-top: 0px;
+  }
 `;
 export const SelectedPeriod = styled.div`
   color: #42567a;
@@ -14,6 +18,9 @@ export const SelectedPeriod = styled.div`
   font-family: "PT Sans";
   line-height: 18.12px;
   margin-bottom: 20px;
+  @media (max-width: 320px) {
+    margin-bottom: 10.67px;
+  }
 `;
 export const ContainerButton = styled.div`
   display: flex;
@@ -30,7 +37,19 @@ export const Button = styled.button<{ $isActive: boolean }>`
   align-items: center;
   &:last-child {
     margin-left: 20px;
+    @media (max-width: 320px) {
+      margin-left: 8.33px;
+    }
   }
+  @media (max-width: 320px) {
+    width: 25px;
+    height: 25px;
+    svg {
+      width: 10px;
+      height: 7px;
+    }
+  }
+
   ${({ $isActive }) =>
     $isActive
       ? `

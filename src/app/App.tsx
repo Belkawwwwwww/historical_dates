@@ -7,7 +7,7 @@ const App: React.FC = () => {
     <>
       <GlobalStyle />
       <Block />
-      {/* <Block /> */}
+      <Block />
     </>
   );
 };
